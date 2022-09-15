@@ -1,5 +1,4 @@
 package com.example.studentmanagmentsystem.controller;
-
 import com.example.studentmanagmentsystem.model.Student;
 import com.example.studentmanagmentsystem.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;

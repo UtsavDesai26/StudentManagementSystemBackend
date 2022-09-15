@@ -1,5 +1,4 @@
 package com.example.studentmanagmentsystem.model;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
