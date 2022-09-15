@@ -10,37 +10,29 @@ import java.util.List;
 @RestController
 public class StudentController {
 
-    @Autowired
-    StudentRepository studentRepository;
 
     @GetMapping("/liststudent")
-    public List<Student> getAllStudent(){
-        return studentRepository.findAll();
+    public String getAllStudent(){
+        return "Get All Student";
     }
 
     @GetMapping("/student/{id}")
-    public Student getstudent(@PathVariable Integer id){
-        return studentRepository.findById(id).get();
+    public String getstudent(){
+        return "Get";
     }
 
     @PutMapping("/student/{id}")
-    public List<Student> updatestudent(@RequestBody Student student, @PathVariable Integer id){
-        Student studentobj = studentRepository.findById(id).get();
-        studentobj.setName(studentobj.getName());
-        studentobj.setAddress(studentobj.getAddress());
-        studentRepository.save(studentobj);
-        return studentRepository.findAll();
+    public String updatestudent(){
+        return "Update";
     }
 
     @DeleteMapping("/student/{id}")
-    public List<Student> deletestudent(@PathVariable Integer id){
-        studentRepository.delete(studentRepository.findById(id).get());
-        return studentRepository.findAll();
+    public String deletestudent(){
+        return "Delete";
     }
 
     @PostMapping("/student")
-    public List<Student> addstudent(@RequestBody Student student){
-        studentRepository.save(student);
-        return studentRepository.findAll();
+    public String addstudent(){
+        return "Post";
     }
 }
